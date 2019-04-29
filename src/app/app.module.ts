@@ -12,6 +12,10 @@ import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
 import {HeroSearchComponent} from './hero-search/hero-search.component';
 import { TodoComponent } from './todo/todo.component';
+import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
 
 
 @NgModule({
@@ -22,7 +26,11 @@ import { TodoComponent } from './todo/todo.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    TodoComponent
+    TodoComponent,
+    TodoListHeaderComponent,
+    TodoListComponent,
+    TodoListItemComponent,
+    TodoListFooterComponent
   ],
   imports: [
     BrowserModule,

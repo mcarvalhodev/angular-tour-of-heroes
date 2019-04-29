@@ -22,8 +22,8 @@ export class TodoComponent implements OnInit {
     this.todos = this.todoService.getTodos();
   }
 
-  addTodo(todo: string): void {
-    this.todoService.addTodo({id: this.todos.length + 1, title: todo, done: false});
+  onAddTodo(todo: Todo): void {
+    this.todoService.addTodo(todo);
   }
 
   toggle(todo: Todo) {

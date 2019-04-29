@@ -1,21 +1,3 @@
-<div>
-  <h1>Todos</h1>
-  <label>
-    <input #todoTitle placeholder="What needs to be done?">
-  </label>
-  <button (click)="addTodo(todoTitle.value); todoTitle.value=''" >add todo</button>
-</div>
-<div>
-  <ul>
-    <li *ngFor="let todo of todos" [class.completed]="todo.done">
-      <input (click)="toggle(todo)" [checked]="todo.done" type="checkbox">
-      <label>{{todo.title}}</label>
-      <button (click)="removeTodo(todo)">x</button>
-    </li>
-  </ul>
-</div>
-<div *ngIf="todos.length">
-  <span>
-    <strong>{{todos.length}}</strong> {{todos.length === 1 ? 'item': 'items'}} left
-  </span>
-</div>
+<app-todo-list-header (add)="onAddTodo($event)"></app-todo-list-header>
+<app-todo-list [todos]="todoService.todos" (toggle)="toggle($event)" (remove)="removeTodo($event)"></app-todo-list>
+<app-todo-list-footer [todos]="todoService.todos"></app-todo-list-footer>
